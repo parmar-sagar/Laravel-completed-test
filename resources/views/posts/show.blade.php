@@ -6,15 +6,16 @@
         <div class="col-md-8">
             <h3>Post Detail</h3>
             <div class="card mt-3">
-                <div class="card-header">{{ 'POST TITLE HERE' }}</div>
+                <div class="card-header">{{ $post->title }}</div>
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
-                        <span>{{ 'USER NAME HERE' }}</span>
-                        <span>{{ '2022-01-01' }}</span>
+                        <span>{{ $post->user->name }}</span>
+                        <span>{{ date('Y-m-d',strtotime($post->posted_at)) }}</span>
                     </div>
                     <hr>
                     <div>
-                        {{ 'POST CONTENT HERE. Post contents contain line breaks. Reflect the line breaks and sanitize the contents itself on browsers. That means the contents contain only <br> tag, no other tags are contained.' }}
+                        {!! $post->content !!}
+
                     </div>
                 </div>
             </div>
